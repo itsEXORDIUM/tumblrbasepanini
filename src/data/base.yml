@@ -1,0 +1,16 @@
+# VIEWS
+tagPage:
+    visible: false
+    tag: "exempleTag"
+dayPage:
+    visible: false
+    month: "january"
+    dayofmonth: "13"
+    year: "2022"
+
+# BASICS
+title: 'base'
+favicon: ''
+sidebar_img: false
+sidebar_img_URL: "../assets/img/avatar.jpg"
+description: 'description'

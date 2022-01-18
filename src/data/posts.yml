@@ -1,0 +1,7 @@
+posts:
+  - type: "text"
+    title: "Block texte"
+    body: "I am the text body !"
+    rebloggedFrom:
+      - username: "reblogged"
+        portraitURL-64: "../assets/img/portraitURL-64.png"

@@ -1,0 +1,20 @@
+{{#if title}}
+    <h1 class="post-title"><a href="{Permalink}">{{title}}</a></h1>
+{{/if}}
+
+{{#ifequal reblogged "true"}}
+    <div class="caption text-caption">
+        {{#rebloggedFrom}}
+        <div class="rebloggedFrom">
+            <img src="{{portraitURL-64}}" class="user-icon">
+            <div class="username {{#ifequal ../IsDeactivated "true"}}deactived{{/ifequal}}"><a href="{Permalink}">{{username}}</a></div>
+        </div>
+        {{/rebloggedFrom}}
+        {{Body}}
+    </div>
+
+    {{else}}
+        <div class="caption text-caption">
+            {{body}}
+        </div>
+{{/ifequal}}

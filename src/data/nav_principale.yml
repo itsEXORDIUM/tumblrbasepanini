@@ -1,0 +1,21 @@
+- name: "Home"
+  link: "/"
+  unabled: true
+- name : "Ask"
+  link: "/ask"
+  unabled: true
+- name: "Archive"
+  link: "/archive"
+  unabled: true
+- name: "Submit"
+  link: "/submit"
+  unabled: true
+- name: "Link1"
+  link: ""
+  unabled: true
+- name: "Link2"
+  link: ""
+  unabled: true
+- name: "Link3"
+  link: ""
+  unabled: true
