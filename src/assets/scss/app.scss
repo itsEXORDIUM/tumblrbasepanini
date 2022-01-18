@@ -1,5 +1,6 @@
 @charset 'utf-8';
 
+@import 'global/colors';
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
@@ -64,369 +65,87 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+// Mine
+@import 'components/sidebar.scss';
+@import 'components/nav.scss';
+@import 'components/credit.scss';
+@import 'components/pagination.scss';
+@import 'components/tumblr_iframe.scss';
+@import 'components/posts.scss';
+
+// responsive
+@import 'components/responsive/tablette.scss';
+@import 'components/responsive/phone.scss';
+
 /*----- BASIC STYLING -----*/
 
+:root {
+    font-size:10px;
+}
+
 body {
-    font-family: sans-serif;
-    font-size: 15px;
-    color: {color:text};
-    background-color: {color:background};
-    line-height: 160%;
+    font-family: $body-font-family;
+    font-size: $global-font-size;
+    color: $body-font-color;
+    background-color: $body-background;
+    line-height: $global-lineheight;
     word-wrap: break-word;
-    letter-spacing: 0.04em;
     margin: 0;
     padding: 0;
 }
 
 a {
-    color: {color:link}; 
+    color: $dark_gray; 
     text-decoration: none;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
+    transition: all $global_transition;
 
-a:hover {
-    color: {color:accent};
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-blockquote {
-    padding: 0 0 0 1.5em;
-    border-left: 1px solid {color:borders};
-    margin: 1.5em 0 1.5em 1.5em;
+    &:hover {
+        color: $primary_color;
+    }
 }
 
 h1, h2, h3, h4, h5, .title {
-    letter-spacing: 0.06em;
-    line-height: 145%;
-    font-weight: bold;
+    font-family: $header-font-family;
+    font-weight: $header-font-weight;
+    font-style: $header-font-style;
+    color: $header-color;
+    line-height: $header-lineheight;
+    margin-bottom: $header-margin-bottom;
 }
 
-h1, .title {font-size: 1.5em;}
-h2 {font-size: 1.3em;}
-h3 {font-size: 1.25em;}
-h4 {font-size: 1.1em;}
-h5 {font-size: 1em;}
+h1, .title {font-size: map-deep-get($header-styles, large, h1, font-size);}
+h2 {font-size: map-deep-get($header-styles, large, h2, font-size);}
+h3 {font-size: map-deep-get($header-styles, large, h3, font-size);}
+h4 {font-size: map-deep-get($header-styles, large, h4, font-size);}
+h5 {font-size: map-deep-get($header-styles, large, h5, font-size);}
 
-small {font-size: 0.9em;}
+small {font-size: $small-font-size;}
 big {font-size: 1.1em;}
 
 hr {
-    height: 1px;
-    border: none;
+    height: 0;
+    border: $hr-border;
     box-shadow: none;
-    background-color: {color:borders};
+    background-color: $medium_gray;
+    width: $global-width;
+    margin: $hr-margin;
 }
 
 pre {
     line-height: inherit;
     font-size: inherit;
     white-space: pre-wrap;
-    white-space: -moz-pre-wrap;
-    white-space: -pre-wrap;
-    white-space: -o-pre-wrap;
     word-wrap: break-word;
 }
 
-.tmblr-iframe-compact .tmblr-iframe--unified-controls {z-index: 999999999!important;}
-
-/*----- SIDEBAR -----*/
-
-#sidebar {
-    width: 250px;
-    position: fixed;
-    top: {text:post margin}px;
-    text-align: center;
-}
-
-{block:ifSidebarImage}
-#side-img {margin-bottom: 1.5em;}
-{/block:ifSidebarImage}
-
-#description, nav {margin-top: 1.25em;}
-nav a {margin: auto 0.5em;}
-
-/*----- POSTS -----*/
-
 main {
     position: relative;
-    width: calc(250px + {select:post width} + 150px);
+    width: calc(250px + 500px + 150px);
     margin: auto;
 }
 
 section {
     position: relative;
-    width: {select:post width};
+    width: 500px;
     margin-left: 400px;
 }
-
-article {
-    width: 100%;
-    position: relative;
-    margin: {text:post margin}px auto;
-}
-
-.posts li, .posts blockquote, figure, video, iframe, .video, .video iframe, figure.tmblr-embed.tmblr-full, figure.tmblr-embed.tmblr-full iframe, .caption iframe {max-width: 100%;}
-
-/*----- CAPTIONS -----*/
-
-.caption {margin-top: 2em; list-style-type: none;}
-.text-caption:first-of-type {margin-top: 0;}
-
-.user-icon, .ask-icon {
-    display: inline-block;
-    vertical-align: middle;
-    width: 2em;
-    height: 2em;
-    margin-right: 1em;
-}
-
-.username {
-    display: inline-block;
-    vertical-align: middle;
-    font-weight: bold;
-}
-
-.deactive::after {
-    content: '(deactivated)';
-    margin-left: 1em;
-    opacity: 0.75;
-    color: {color:text};
-}
-
-p.tmblr-attribution {margin-top: 1em !important;}
-
-/*----- TEXT -----*/
-
-h1.post-title {margin-top: 0;}
-
-/*----- LINK -----*/
-
-a.link-wrap {display: block; border: 1px solid {color:borders};}
-.link {padding: 2em;}
-.link-host, .link-txt {margin-top: 1.5em;}
-
-.npf-link-block {
-    margin-top: 1.5em; 
-    background-color: inherit;
-    border: 1px solid inherit;
-    color: inherit;
-}
-
-/*----- PHOTO -----*/
-
-img {
-    margin: 0;
-    display: block;
-    height: auto;
-    max-width: 100%;
-}
- 
-.photo img {width: 100%;}
-.vignette, #vignette {opacity: 0;}
-.tmblr-lightbox, #tumblr_lightbox {background-color: rgba(130, 130, 130, 0.75) !important;}
- 
-.lightbox-image, #tumblr_lightbox img {
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    max-width: none;
-}
-
-#tumblr_lightbox_caption, .lightbox-caption {
-    color: #fff !important;
-    font-family: inherit;
-    margin-top: 1em !important;
-}
-
-/*----- PHOTOSET -----*/
-
-.post-content div.npf_row, .post div.npf_row, body div.npf_row {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-/*----- QUOTE -----*/
-
-.quote {line-height: 160%; font-size: 1.25em;}
-
-.quote p:first-of-type {margin-top: 0;}
-.quote p:last-of-type {margin-bottom: 0;}
-
-.source {margin-top: 1.5em;}
-
-/*----- CHAT -----*/
-
-.chat {padding: 0; margin: 0;}
-.chat li {list-style-type: none; margin-top: 1em;}
-.chat li:first-of-type {margin-top: 0;}
-.chatter {font-weight: bold;}
-
-p.npf_chat, p.npf_chat b {font-family: inherit;}
-
-/*----- ANSWER -----*/
-
-.ask-wrap {border-bottom: 1px solid {color:borders}; padding-bottom: 2em;}
-
-.ask-wrap .asking {
-    display: inline-block; 
-    margin-left: 1em;
-    font-weight: bold;
-}
-
-.question {margin-top: 1em;}
-.question p:first-of-type {margin-top: 0;}
-.question p:last-of-type {margin-bottom: 0;}
-
-/*----- AUDIO -----*/
- 
-.audiopost {padding: 2em; border: 1px solid {color:borders};}
- 
-.album-art {
-    z-index: 1;
-    display: inline-block;
-    vertical-align: middle;
-    float: left;
-    width: 100px;
-    height: 100px;
-}
-
-.audio-player-wrap {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-}
- 
-.button {
-    width: 30px;
-    height: 30px;
-    overflow: hidden;
-    position: relative;
-    z-index: 2;
-    margin: 7px;
-}
- 
-.audiobox {
-    background-color: #f2f2f2;
-    z-index: 3;
-    position: absolute;
-    margin: 28px 0 0 28px;
-    border-radius: 50%;
-}
- 
-.audioinfo {
-    display: inline-block;
-    height: 100px;
-    max-width: calc(100% - 100px);
-    margin-left: 100px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding-left: 2em;
-}
-
-.audioinfo li {list-style-type: none;}
-.track {font-weight: bold;}
-
-/*----- INFO -----*/
-
-.info {margin-top: 2em;}
-.info a {display: inline-block; vertical-align: middle;}
-
-.likeb {
-    position: relative;
-    display: inline-block;
-    height: 1.6em;
-    margin-bottom: -1px;
-}
- 
-.likeb .like_button iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 2;
-    opacity: 0;
-}
-
-.like_button iframe {width: 100% !important; height: 100% !important;}
-.likeb .liked + .actual-button {color: red;}
-.likeb .liked + .actual-button:after {content: 'd';}
-
-.info a, .tags a {margin-right: 0.75em;}
-
-a.pinned-post {font-weight: bold; color: {color:accent};}
-
-/*---- POST NOTES -----*/
-
-.notes {margin: {text:post margin}px 0;}
-
-ol.notes {
-    max-width: 100%;
-    padding: 0;
-    margin: 2em 0 0 0;
-}
-
-ol.notes li.note {padding: 0.5em 0; list-style-type: none;}
-
-ol.notes li.note img.avatar {
-    margin-right: 1em;
-    vertical-align: middle;
-    display: inline-block;
-    width: 1.25em;
-    height: 1.25em;
-}
-
-/*---- PAGINATION -----*/
-
-#page-navigation {text-align: center;}
-#page-navigation a, .current-page {margin: 0 0.5em;}
-.current-page {font-weight: bold; color: {color:accent};}
-
-/*---- CREDIT -----*/
-
-#credit {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 15px;
-}
-
-/*---- 
-
-MEDIA QUERIES AND RESPONSIVENESS:
-
-if you change the basic layout (i.e. sidebar to header), you MUST modify     or delete this section, or else your theme will get screwed up on smaller screen sizes. if you're unfamiliar with media queries and/or you aren't interested in making responsive themes, I recommend deleting this whole section.
-
------*/
-
-/*--- for small desktop/tablet screens. converts sidebar to header ---*/
-
-@media only screen and (max-width: 1100px) {
-    main {width: {select:post width};}
-    
-    #sidebar {
-        position: relative; 
-        margin: {text:post margin}px auto;
-        width: 100%;
-        top: auto;
-    }
-    
-    section {margin-left: 0;}
-}
-
-/*--- for mobile devices ---*/
-
-@media only screen and (max-width: 720px) {
-    main, section {width: 80vw;}
-}
-
-/*---- END OF MEDIA QUERIES -----*/

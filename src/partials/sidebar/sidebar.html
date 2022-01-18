@@ -1,0 +1,11 @@
+<aside id="sidebar">
+    {{#if base.sidebar_img}}
+      <img src="{{base.sidebar_img_URL}}" id="side-img" alt=""/>
+    {{/if}}
+    <div class="title">
+      <a href="/">{{base.title}}</a>
+    </div>
+    <div id="description">{{base.description}}</div>
+    
+    {{> nav}}
+</aside>

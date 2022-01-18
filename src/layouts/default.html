@@ -2,128 +2,40 @@
 <html>
 <head>
     <title>{{base.title}}</title>
- 
-<link rel="shortcut icon" href="{base.favicon}">
-<link rel="alternate" type="application/rss+xml" href="{RSS}">
-<meta name="description" content="{MetaDescription}"/>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!---
-    
-    THEME BY EXORDIUM of exothemes.
-    
---->
-
-<!----- VARIABLES ----->
-
-<meta name="color:Background" content="#ffffff"/>
-<meta name="color:Text" content="#707070"/>
-<meta name="color:Link" content="#313131"/>
-<meta name="color:Accent" content="#71d3d7"/>
-<meta name="color:Borders" content="#dcdcdc"/>
-
-<meta name="select:Post Width" content="400px" title="400px"/>
-<meta name="select:Post Width" content="500px" title="500px"/>
-<meta name="select:Post Width" content="540px" title="540px"/>
-
-<meta name="text:Post Margin" content="150"/>
-
-<meta name="text:Home Link" content="home"/>
-<meta name="text:Ask Link" content="ask"/>
-<meta name="text:Archive Link" content="archive"/>
-<meta name="text:Submit Link" content=""/>
-<meta name="text:Link 1 URL" content=""/>
-<meta name="text:Link 1" content=""/>
-<meta name="text:Link 2 URL" content=""/>
-<meta name="text:Link 2" content=""/>
-<meta name="text:Link 3 URL" content=""/>
-<meta name="text:Link 3" content=""/>
+    <link rel="shortcut icon" href="{base.favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <meta name="description" content="{MetaDescription}"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/app.css">
 </head>
 <body>
 
-<main>
+    {{!> header}}
 
-<aside id="sidebar">
-    {{#if base.sidebar_img}}
-      <img src="{{base.sidebar_img_URL}}" id="side-img" alt=""/>
-    {{/if}}
-    <div class="title">
-      <a href="/">{{base.title}}</a>
-    </div>
-    <div id="description">{{base.description}}</div>
-    <nav>
-        <ul>
-          {{#each nav_principale}}
-            {{#if unabled}}
-              <li class="{{name}}">
-                <a href="{{link}}">{{name}}</a>
-              </li>
-            {{/if}}
-          {{/each}}
-        </ul>
-    </nav>
-</aside>
+    <main>
 
-<!----- TAG AND DAY PAGES ----->
+    {{> sidebar}}
 
-<!-- section = post container -->
+    <section>
 
-<section>
+        {{#if base.tagPage.visible}}
+          <article>
+              Viewing posts filed under #{{base.tagPage.tag}}
+          </article>
+        {{/if}}
 
-    {{#if base.tagPage.visible}}
-      <article>
-          Viewing posts filed under #{{base.tagPage.tag}}
-      </article>
-    {{/if}}
+        {{#if base.dayPage.visible}}
+          <article>
+              Viewing posts made on {{base.dayPage.month}} {{base.dayPage.dayofmonth}}, {{base.dayPage.year}}
+          </article>
+        {{/if}}
 
-    {{#if base.dayPage.visible}}
-      <article>
-          Viewing posts made on {{base.dayPage.month}} {{base.dayPage.dayofmonth}}, {{base.dayPage.year}}
-      </article>
-    {{/if}}
+        {{> posts_container}}
 
-    <!----- POSTS ----->
+    </section>
 
-    {{#posts}}
-      <article class="posts" id="{PostID}">
-
-        {{#each posts.items}}
-
-          {{#ifequal type "text"}}
-            {{!> text_post reblogged="true" IsDeactivated="true"}}
-          {{/ifequal}}
-
-          {{#ifequal type "link"}}
-            {{!> link_post reblogged="true" IsDeactivated="true"}}
-          {{/ifequal}}
-
-          {{#ifequal type "photo"}}
-            {{!> photo_post reblogged="true" IsDeactivated="true"}}
-          {{/ifequal}}
-
-          {{#ifequal type "photoset"}}
-            {{!> photoset_post reblogged="true" IsDeactivated="true"}}
-          {{/ifequal}}
-
-          {{#ifequal type "video"}}
-            {{> video_post reblogged="true" IsDeactivated="true"}}
-          {{/ifequal}}
-
-
-        {{/each}}
-      </article>
-    {{/posts}}
-
-    <!-- end of posts container -->
-
-</section>
-
-<!----- PAGINATION ----->
-
-<!-- end of main container -->
-
-</main>
+    </main>
 
 </body>
 </html>
