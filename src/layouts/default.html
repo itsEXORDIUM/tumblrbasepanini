@@ -88,13 +88,27 @@
     {{#posts}}
       <article class="posts" id="{PostID}">
 
-        {{#each posts}}
+        {{#each posts.items}}
 
           {{#ifequal type "text"}}
             {{!> text_post reblogged="true" IsDeactivated="true"}}
           {{/ifequal}}
 
-          
+          {{#ifequal type "link"}}
+            {{!> link_post reblogged="true" IsDeactivated="true"}}
+          {{/ifequal}}
+
+          {{#ifequal type "photo"}}
+            {{!> photo_post reblogged="true" IsDeactivated="true"}}
+          {{/ifequal}}
+
+          {{#ifequal type "photoset"}}
+            {{!> photoset_post reblogged="true" IsDeactivated="true"}}
+          {{/ifequal}}
+
+          {{#ifequal type "video"}}
+            {{> video_post reblogged="true" IsDeactivated="true"}}
+          {{/ifequal}}
 
 
         {{/each}}
