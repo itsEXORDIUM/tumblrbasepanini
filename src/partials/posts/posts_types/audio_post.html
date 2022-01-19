@@ -1,21 +1,13 @@
-<div class="audiopost">
-    <div class="audiobox">
+<div class="audio">
+    <div class="audio_container">
         <div class="button">
             {{AudioPlayer}}
         </div>
     </div>
-    <img src="{{AlbumArtURL}}" class="album-art">
-    <div class="audioinfo">
+    <img src="{{AlbumArtURL}}" class="album_cover">
+    <ul class="audio_infos">
         <li class="track">{{TrackName}}</li>
-        <li>{{Artist}}</li>
-        <li>{{Album}}</li>
-    </div>
+        <li class="artist">{{Artist}}</li>
+        <li class="album">{{Album}}</li>
+    </ul>
 </div>
-{{#ifequal reblogged "true"}}
-    {{> reblogged}}
-
-    {{else}}
-        <li class="caption">
-            {{Caption}}
-        </li>
-{{/ifequal}}

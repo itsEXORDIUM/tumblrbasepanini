@@ -7,35 +7,11 @@
     <meta name="description" content="{MetaDescription}"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://static.tumblr.com/a0dmjhi/Ka7omax1p/layout.css" />
     <link rel="stylesheet" href="../assets/css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-
-    {{!> header}}
-
-    <main>
-
-    {{> sidebar}}
-
-    <section>
-
-        {{#if base.tagPage.visible}}
-          <article>
-              Viewing posts filed under #{{base.tagPage.tag}}
-          </article>
-        {{/if}}
-
-        {{#if base.dayPage.visible}}
-          <article>
-              Viewing posts made on {{base.dayPage.month}} {{base.dayPage.dayofmonth}}, {{base.dayPage.year}}
-          </article>
-        {{/if}}
-
-        {{> posts_container}}
-
-    </section>
-
-    </main>
-
+    {{> body}}
 </body>
 </html>

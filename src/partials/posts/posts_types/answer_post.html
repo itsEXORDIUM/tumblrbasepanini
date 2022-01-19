@@ -1,18 +1,11 @@
-<div class="ask-wrap">
-    <img src="{{AskerPortraitURL-64}}" class="ask-icon">
-    <div class="asking">{{Asker}} asked</div>
-    <div class="question">{{Question}}</div>
+<div class="question">
+    <img src="{{AskerPortraitURL-64}}" class="avatar_icon">
+    <p>{{{Asker}}} asked</p> {{{Question}}}
 </div>
-<li class="caption">
-    <img src="{{AnswererPortraitURL-64}}" class="user-icon">
-    <div class="username {{#ifequal IsDeactivated "true"}}deactived{{/ifequal}}""><a href="{Permalink}">{{Answerer}}</a></div>
-    {{Answer}}
-</li>
-{{#ifequal reblogged "true"}}
-    {{> reblogged}}
-
-    {{else}}
-        <li class="caption">
-            {{Replies}}
-        </li>
-{{/ifequal}}
+<div class="caption">
+    <img src="{{AnswererPortraitURL-64}}" class="avatar_icon">
+    <p class="username {{#ifequal IsDeactivated "true"}}deactived{{/ifequal}}"">
+        <a href="{Permalink}">{{Answerer}}</a>
+    </p>
+    {{{Answer}}}
+</div>

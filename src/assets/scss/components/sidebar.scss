@@ -1,12 +1,17 @@
+$sidebar_width: 25rem;
+
 /*----- SIDEBAR -----*/
 
 #sidebar {
     width: $sidebar_width;
     position: fixed;
-    top: 150px;
+    top: 15rem;
     text-align: center;
 }
 
-#side-img {margin-bottom: 1.5em;}
-
-#description {margin-top: 1.25em;}
+@mixin sidebar_img($sidebar_img: true) {
+    @if $sidebar_img {
+        .sidebar_img {opacity:0.5;}
+    }
+  }
+@include sidebar_img($sidebar_img);

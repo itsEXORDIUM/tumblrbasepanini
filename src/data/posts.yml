@@ -2,8 +2,10 @@ posts:
   items:
     - type: "text"
       title: "Block texte"
-      body: "I am the text body !"
-      rebloggedusername: "reblogged"
+      body: |
+        <h2>Santanico Pandemonium</h2><p>Out there, the <b>world </b>is full of savages and tyrants. Out there we’ve all been victims and slaves, but in <i>here</i>, we live with <a href="https://www.tumblr.com/neue_web/iframe/edit/google.com">dignity </a>and freedom, and we do that by sticking to three <strike>rules</strike>.<br></p><figure data-orig-height="130" data-orig-width="245"><img src="https://64.media.tumblr.com/15073e650d6d4f624dd5c2497bf3602b/de9ed536bff8ad43-bc/s250x400/6c1595cb7e73e931fbf07d87c61a83cd7c1f3d49.gifv" data-orig-height="130" data-orig-width="245" width="245" height="130" alt="image"></figure><ol><li>long</li><li>live</li><li>the</li><li> queen</li></ol><ul><li>long</li><li>live</li><li>the</li><li>queen</li></ul><p>Out there, the <b>world </b>is full of savages and tyrants. Out there we’ve all been victims and slaves, but in <i>here</i>, we live with <a href="https://www.tumblr.com/neue_web/iframe/edit/google.com">dignity </a>and freedom, and we do that by sticking to three <strike>rules</strike>.</p><figure class="tmblr-embed tmblr-full"><iframe id="embed-61e817b59cf41108630919" class="embed_iframe" src="https://safe.txmblr.com/svc/embed/inline/https%3A%2F%2Fyoutu.be%2FeA37pjvjRVU#embed-61e817b59cf41108630919-partied" width="500" height="280" scrolling="no" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="" webkitallowfullscreen=""></iframe></figure><figure class="tmblr-full" data-orig-height="400" data-orig-width="540" data-tumblr-attribution="queenofthisshit:oxNg3fHpnyDEoZSyjAxIwQ:ZewZ6aZn9k8fKW00"><img src="https://64.media.tumblr.com/e218b66f42f29856c77314c598560f48/de9ed536bff8ad43-dd/s500x750/421f6f2279d0f10bb15966ddecda9ba1bccf1d30.gifv" data-orig-height="400" data-orig-width="540" width="500" height="370" alt="image"><p class="tmblr-attribution"><a href="https://tmblr.co/ZewZ6aZn9k8fKW00" target="_blank" data-peepr="{&quot;tumblelog&quot;:&quot;queenofthisshit&quot;,&quot;postId&quot;:&quot;644338974488395776&quot;}">Originally posted by queenofthisshit</a></p></figure><p class="read_more_container"><a href="https://testexordium.tumblr.com/post/672828297278865408/the-devil-within" class="read_more">Keep reading</a></p>
+      rebloggedusername: "rebloggedusername"
+      IsDeactivated: true
       rebloggedportraitURL-64: "../assets/img/portraitURL-64.png"
       PinnedPostLabel: "Pinned"
       Month: "January"
@@ -28,16 +30,17 @@ posts:
       rebloggedusername: "reblogged"
       rebloggedportraitURL-64: "../assets/img/portraitURL-64.png"
     - type: "photoset"
-      Photoset-700: "iframe_photoset_ici"
       rebloggedusername: "reblogged"
       rebloggedportraitURL-64: "../assets/img/portraitURL-64.png"
     - type: "video"
-      Video-500: "iframe_video_ici"
+      videoSRC: "https://www.youtube.com/embed/Xk14P2TK0KQ"
       rebloggedusername: "reblogged"
       rebloggedportraitURL-64: "../assets/img/portraitURL-64.png"
     - type: "quote"
       Quote: "Who the hell is Bucky"
       Source: "Bucky Barnes"
+      rebloggedusername: "reblogged"
+      rebloggedportraitURL-64: "../assets/img/portraitURL-64.png"
     - type: "chat"
       Title: "Chat title"
       chats:
@@ -47,15 +50,20 @@ posts:
           Line: "You're my mission !"
         - Label: "Steve"
           Line: "Then finish it. 'Cause I'm with you 'til the end of the line."
-    - type: "answer"
-      AskerPortraitURL-64: "../assets/img/portraitURL-64.png"
-      Asker: "asker"
-      Question: "question ?"
-      AnswererPortraitURL-64: "../assets/img/avatar.jpg"
-      Answerer: "Answerer"
-      Answer: "Answer"
       rebloggedusername: "reblogged"
       rebloggedportraitURL-64: "../assets/img/portraitURL-64.png"
+    - type: "answer"
+      AskerPortraitURL-64: "../assets/img/portraitURL-64.png"
+      Asker: <a href="#" class="asker">askername</a>
+      Question: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum rhoncus ultrices. Donec egestas lectus in tincidunt eleifend. In maximus, ex vel tristique eleifend, odio nisi dictum magna, pellentesque porttitor erat ante quis dui. Ut ante sem, lacinia quis massa et, pretium volutpat tellus. Suspendisse condimentum imperdiet neque, eu volutpat odio varius facilisis. Morbi nec massa vehicula, vestibulum nulla in, sagittis velit. Ut ultricies gravida orci malesuada tincidunt.</p>
+      AnswererPortraitURL-64: "../assets/img/avatar.jpg"
+      Answerer: "Answerer"
+      Answer: |
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum rhoncus ultrices. Donec egestas lectus in tincidunt eleifend. In maximus, ex vel tristique eleifend, odio nisi dictum magna, pellentesque porttitor erat ante quis dui. Ut ante sem, lacinia quis massa et, pretium volutpat tellus. Suspendisse condimentum imperdiet neque, eu volutpat odio varius facilisis. Morbi nec massa vehicula, vestibulum nulla in, sagittis velit. Ut ultricies gravida orci malesuada tincidunt.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum rhoncus ultrices. Donec egestas lectus in tincidunt eleifend. In maximus, ex vel tristique eleifend, odio nisi dictum magna, pellentesque porttitor erat ante quis dui. Ut ante sem, lacinia quis massa et, pretium volutpat tellus. Suspendisse condimentum imperdiet neque, eu volutpat odio varius facilisis. Morbi nec massa vehicula, vestibulum nulla in, sagittis velit. Ut ultricies gravida orci malesuada tincidunt.</p>
+      rebloggedusername: "reblogged"
+      rebloggedportraitURL-64: "../assets/img/portraitURL-64.png"
+      noReblog: true
     - type: "audio"
       AudioPlayer: "audioplayer"
       AlbumArtURL: "../assets/img/album.jpg"

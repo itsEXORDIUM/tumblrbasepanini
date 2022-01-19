@@ -1,42 +1,42 @@
-blockquote {
-    padding: $blockquote-padding;
-    border-left: $blockquote-border;
-    margin: 1.5em 0 1.5em 1.5em;
-    color: $blockquote-color;
-}
+$article_padding: 2rem;
+$article_margin_bottom: 10rem;
+$article_background_color: $light_gray;
 
-article {
-    width: 100%;
+article.post {
+    width: $post_size;
     position: relative;
-    margin: 150px auto;
+    margin-bottom: $article_margin_bottom;
+    padding:$article_padding;
+    background-color:$article_background_color;
 }
 
-.posts li, .posts blockquote, figure, video, iframe, .video, .video iframe, figure.tmblr-embed.tmblr-full, figure.tmblr-embed.tmblr-full iframe, .caption iframe {max-width: 100%;}
+.post * {max-width: 100%;}
 
-/*----- CAPTIONS -----*/
+.body {
+    margin-top: 2em; list-style-type: none;
+    &:first-of-type {margin-top: 0;}
+}
 
-.caption {margin-top: 2em; list-style-type: none;}
-.text-caption:first-of-type {margin-top: 0;}
-
-.user-icon, .ask-icon {
+.avatar_icon {
     display: inline-block;
     vertical-align: middle;
     width: 2em;
     height: 2em;
     margin-right: 1em;
+    border-radius:50%;
 }
 
 .username {
     display: inline-block;
     vertical-align: middle;
     font-weight: bold;
-}
 
-.deactive::after {
-    content: '(deactivated)';
-    margin-left: 1em;
-    opacity: 0.75;
-    color: $dark_gray;
+    &.deactived::after {
+        content: '(deactivated)';
+        margin-left: 1em;
+        opacity: 0.75;
+        color: $dark_gray;
+    }
 }
 
 p.tmblr-attribution {margin-top: 1em !important;}
@@ -47,16 +47,21 @@ h1.post-title {margin-top: 0;}
 
 /*----- LINK -----*/
 
-a.link-wrap {display: block; border: 1px solid $medium_gray;}
-.link {padding: 2em;}
-.link-host, .link-txt {margin-top: 1.5em;}
-
-.npf-link-block {
-    margin-top: 1.5em; 
-    background-color: inherit;
-    border: 1px solid inherit;
-    color: inherit;
+.link_container {
+    border: 1px solid $medium_gray; position:relative;
+    a.title::before {content:''; display:block; position:absolute; width:100%; height:100%; top:0; left:0;}
+    .link {
+        padding: 2em;
+        .host, .txt {margin-top: 1.5em; display:block;}
+    }
 }
+
+// .npf-link-block {
+//     margin-top: 1.5em; 
+//     background-color: inherit;
+//     border: 1px solid inherit;
+//     color: inherit;
+// }
 
 /*----- PHOTO -----*/
 
@@ -114,7 +119,7 @@ p.npf_chat, p.npf_chat b {font-family: inherit;}
 
 /*----- ANSWER -----*/
 
-.ask-wrap {
+.question {
     border-bottom: 1px solid $medium_gray; padding-bottom: 2em;
     .asking {
         display: inline-block; 
@@ -123,17 +128,11 @@ p.npf_chat, p.npf_chat b {font-family: inherit;}
     }
 }
 
-.question {
-    margin-top: 1em;
-    p:first-of-type {margin-top: 0;}
-    p:last-of-type {margin-bottom: 0;}
-}
-
 /*----- AUDIO -----*/
  
-.audiopost {padding: 2em; border: 1px solid $medium_gray;}
+.audio {padding: 2em; border: 1px solid $medium_gray;}
  
-.album-art {
+.album_cover {
     z-index: 1;
     display: inline-block;
     vertical-align: middle;
@@ -157,7 +156,7 @@ p.npf_chat, p.npf_chat b {font-family: inherit;}
     margin: 7px;
 }
  
-.audiobox {
+.audio_container {
     background-color: $white;
     z-index: 3;
     position: absolute;
@@ -165,7 +164,7 @@ p.npf_chat, p.npf_chat b {font-family: inherit;}
     border-radius: 50%;
 }
  
-.audioinfo {
+.audio_infos {
     display: inline-block;
     height: 100px;
     max-width: calc(100% - 100px);
@@ -177,7 +176,7 @@ p.npf_chat, p.npf_chat b {font-family: inherit;}
     padding-left: 2em;
 }
 
-.audioinfo li {list-style-type: none;}
+.audio_infos li {list-style-type: none;}
 .track {font-weight: bold;}
 
 /*----- INFO -----*/
@@ -210,7 +209,14 @@ p.npf_chat, p.npf_chat b {font-family: inherit;}
 
 .info a, .tags a {margin-right: 0.75em;}
 
-a.pinned-post {font-weight: bold; color: $secondary_color;}
+a.pinned {font-weight: bold; color: $secondary_color;}
+
+blockquote {
+    padding: $blockquote-padding;
+    border-left: $blockquote-border;
+    margin: 1.5em 0 1.5em 1.5em;
+    color: $blockquote-color;
+}
 
 /*---- POST NOTES -----*/
 
