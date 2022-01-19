@@ -28,7 +28,7 @@ description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ve
 
 # VIEWS
 tagPage:
-    visible: false
+    visible: true
     tag: "exempleTag"
 dayPage:
     visible: false

@@ -1,25 +1,13 @@
 <!-- INDEX PAGE -->
 
-{{!> header}}
+<div class="head_page">
+    {{#if base.tagPage.visible}}
+        <p>Viewing posts filed under #{{base.tagPage.tag}}</p>
+    {{/if}}
+    {{#if base.dayPage.visible}}
+       <p>Viewing posts made on {{base.dayPage.month}} {{base.dayPage.dayofmonth}}, {{base.dayPage.year}}</p>
+    {{/if}}
+</div>
 
-<main>
+{{> posts_container}}
 
-    {{> sidebar}}
-
-    <section>
-
-        
-            <div class="head_page">
-                {{#if base.tagPage.visible}}
-                    Viewing posts filed under #{{base.tagPage.tag}}
-                {{/if}}
-                {{#if base.dayPage.visible}}
-                    Viewing posts made on {{base.dayPage.month}} {{base.dayPage.dayofmonth}}, {{base.dayPage.year}}
-                {{/if}}
-            </div>
-
-        {{> posts_container}}
-
-    </section>
-
-</main>

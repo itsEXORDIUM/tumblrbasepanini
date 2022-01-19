@@ -6,12 +6,18 @@ $sidebar_width: 25rem;
     width: $sidebar_width;
     position: fixed;
     top: 15rem;
-    text-align: center;
+
+    .title {
+        font-family:$title; text-align: center;
+        a {color:$primary_color;}
+    }
+
+    .description {text-align: justify;}
 }
 
 @mixin sidebar_img($sidebar_img: true) {
     @if $sidebar_img {
-        .sidebar_img {opacity:0.5;}
+        .sidebar_img {display: block;}
     }
   }
 @include sidebar_img($sidebar_img);

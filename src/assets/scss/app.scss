@@ -1,8 +1,8 @@
 @charset 'utf-8';
 
-@import 'global/colors';
+@import 'global/variables';
 @import 'global/typography';
-@import 'settings';
+@import 'global/settings';
 
 // TUMBLR BASICS
 @import 'components/tumblr_iframe.scss';
@@ -19,12 +19,12 @@
 @import 'components/credit.scss';
 
 // RESPONSIVE
-@import 'components/responsive/tablette.scss';
-@import 'components/responsive/phone.scss';
+// @import 'components/responsive/tablette.scss';
+// @import 'components/responsive/phone.scss';
 
 /*----- BASIC STYLING -----*/
 $global_transition: 0.3s ease-in-out;
-$main_width: 50rem;
+$main_width: 100%;
 $body_padding:0;
 
 :root {
@@ -50,6 +50,7 @@ a {
     color: $dark_gray; 
     text-decoration: none;
     transition: all $global_transition;
+    font-size:1em;
 
     &:hover {
         color: $primary_color;
@@ -65,7 +66,7 @@ h1, h2, h3, h4, h5, .title {
     margin-bottom: $header-margin-bottom;
 }
 
-h1, .title {font-size: map-deep-get($header-styles, large, h1, font-size);}
+h1 {font-size: map-deep-get($header-styles, large, h1, font-size);}
 h2 {font-size: map-deep-get($header-styles, large, h2, font-size);}
 h3 {font-size: map-deep-get($header-styles, large, h3, font-size);}
 h4 {font-size: map-deep-get($header-styles, large, h4, font-size);}
@@ -110,4 +111,16 @@ section {
     position: relative;
     width: 50rem;
     margin-left: 40rem;
+}
+
+img {
+    margin: 0;
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+figure {
+    margin-left:0;
+    margin-right:0;
 }

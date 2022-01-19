@@ -43,22 +43,27 @@
                     {{> reblogged}}
                 {{/unless}}
 
-                {{#if body}}
-                    {{{body}}}
-                {{/if}}
+                {{#ifequal type "text"}}
+                {{else}}
+                    {{#if body}}
+                        {{{body}}}
+                    {{/if}}
 
-                {{#if caption}}
-                    {{{caption}}}
-                {{/if}}
+                    {{#if caption}}
+                        {{{caption}}}
+                    {{/if}}
 
-                {{#if description}}
-                    {{{description}}}
-                {{/if}}
+                    {{#if description}}
+                        {{{description}}}
+                    {{/if}}
+                {{/ifequal}}
             </div>
 
             <!----- INFO ----->
-            <div class="info">
-            {{> pinnedPost}}
+            <div class="infos">
+            {{#if PinnedPostLabel}}
+                {{> pinnedPost}}
+            {{/if}}
             {{> date}}
             {{> noteCount}}
                     
@@ -77,8 +82,10 @@
                 {{> tags}}
             {{/if}}
 
-            <!----- POST NOTES ----->
-            {{!> postNotes}}
+            {{#if postNotes}}
+                <!----- POST NOTES ----->
+                {{> postNotes}}
+            {{/if}}
         </article>
     {{/each}}
 {{/posts}}
